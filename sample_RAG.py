@@ -1,19 +1,17 @@
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_chroma import Chroma
-from langchain.embeddings import SentenceTransformerEmbeddings
+from langchain_community.vectorstores import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
+import os
 
-chat = ChatGroq(
-    temperature=0,
-    model="llama3-70b-8192",
-    groq_api_key="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"
-    # Optional if not set as an environment variable
-)
+
+os.environ["GROQ_API_KEY"] = "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"
+chat = ChatGroq(model_name="mixtral-8x7b-32768", temperature=0)
 
 parser = StrOutputParser()
 file_path = "example_data/14 may office drop.pdf"
@@ -28,33 +26,33 @@ def document_loader(file_path):
 def document_splitter(docs):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     splits = text_splitter.split_documents(docs)
-    embeddings = SentenceTransformerEmbeddings(model_name="paraphrase-MiniLM-L6-v2")
-    vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
+    embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en")
+    vector_db = Chroma.from_documents(splits, embedding_model)
 
-    return vectorstore.as_retriever()
+    return vector_db.as_retriever(search_kwargs={"k": 3})
 
 
 docs = document_loader(file_path)
 retriever = document_splitter(docs)
 
-# system_prompt = (
-#     "You are an assistant for question-answering tasks. "
-#     "Use the following pieces of retrieved context to answer "
-#     "the question. If you don't know the answer, say that you "
-#     "don't know. Use three sentences maximum and keep the "
-#     "answer concise."
-#     "\n\n"
-#     "{context}"
-# )
-
 system_prompt = (
-    "your task is to extract and summarize the content. "
-    "Use the following pieces of retrieved context. If you don't know the answer, say that you "
+    "You are an assistant for question-answering tasks. "
+    "Use the following pieces of retrieved context to answer "
+    "the question. If you don't know the answer, say that you "
     "don't know. Use three sentences maximum and keep the "
     "answer concise."
     "\n\n"
     "{context}"
 )
+
+# system_prompt = (
+#     "your task is to extract and summarize the content. "
+#     "Use the following pieces of retrieved context. If you don't know the answer, say that you "
+#     "don't know. Use three sentences maximum and keep the "
+#     "answer concise."
+#     "\n\n"
+#     "{context}"
+# )
 
 prompt = ChatPromptTemplate.from_messages(
     [

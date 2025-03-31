@@ -1,0 +1,152 @@
+[
+  {
+    "restaurant": "Spice Villa",
+    "cuisine": "Indian",
+    "type": "Veg & Non-Veg",
+    "location": "Downtown Food Street",
+    "ambience": "Cozy and family-friendly",
+    "menu": [
+      { "item": "Butter Chicken", "price": 350 },
+      { "item": "Paneer Butter Masala", "price": 280 },
+      { "item": "Garlic Naan", "price": 50 },
+      { "item": "Dal Tadka", "price": 200 },
+      { "item": "Chicken Biryani", "price": 420 }
+    ],
+    "specialties": "Known for delicious Butter Chicken"
+  },
+  {
+    "restaurant": "Pure Veg Delights",
+    "cuisine": "Indian",
+    "type": "Vegetarian",
+    "location": "City Center Mall",
+    "ambience": "Casual and budget-friendly",
+    "menu": [
+      { "item": "Chole Bhature", "price": 280 },
+      { "item": "Aloo Paratha", "price": 180 },
+      { "item": "Paneer Tikka", "price": 350 },
+      { "item": "Masala Dosa", "price": 250 },
+      { "item": "Gulab Jamun", "price": 100 }
+    ],
+    "specialties": "Known for delicious Chole Bhature"
+  },
+  {
+    "restaurant": "The Italian Table",
+    "cuisine": "Italian",
+    "type": "Vegetarian & Non-Vegetarian",
+    "location": "Riverside Boulevard",
+    "ambience": "Elegant and romantic",
+    "menu": [
+      { "item": "Margherita Pizza", "price": 450 },
+      { "item": "Pasta Alfredo", "price": 400 },
+      { "item": "Bruschetta", "price": 220 },
+      { "item": "Tiramisu", "price": 300 },
+      { "item": "Mushroom Risotto", "price": 420 }
+    ],
+    "specialties": "Known for delicious Margherita Pizza"
+  },
+  {
+    "restaurant": "Sushi Haven",
+    "cuisine": "Japanese",
+    "type": "Seafood & Vegetarian",
+    "location": "Harbor Bay Plaza",
+    "ambience": "Minimalist and modern",
+    "menu": [
+      { "item": "Salmon Sushi", "price": 550 },
+      { "item": "California Roll", "price": 480 },
+      { "item": "Tempura Udon", "price": 500 },
+      { "item": "Miso Soup", "price": 200 },
+      { "item": "Green Tea Ice Cream", "price": 180 }
+    ],
+    "specialties": "Known for delicious Salmon Sushi"
+  },
+  {
+    "restaurant": "BBQ Junction",
+    "cuisine": "American",
+    "type": "Non-Vegetarian",
+    "location": "Highway Food Court",
+    "ambience": "Rustic and lively",
+    "menu": [
+      { "item": "Grilled Ribs", "price": 750 },
+      { "item": "Cheeseburger", "price": 300 },
+      { "item": "Buffalo Wings", "price": 400 },
+      { "item": "Coleslaw", "price": 150 },
+      { "item": "Apple Pie", "price": 280 }
+    ],
+    "specialties": "Known for delicious Grilled Ribs"
+  },
+  {
+    "restaurant": "Tandoori Flames",
+    "cuisine": "Indian",
+    "type": "Veg & Non-Veg",
+    "location": "Old Market Road",
+    "ambience": "Traditional and warm",
+    "menu": [
+      { "item": "Tandoori Chicken", "price": 450 },
+      { "item": "Mutton Rogan Josh", "price": 520 },
+      { "item": "Lachha Paratha", "price": 80 },
+      { "item": "Jeera Rice", "price": 200 },
+      { "item": "Kesar Kulfi", "price": 220 }
+    ],
+    "specialties": "Known for delicious Tandoori Chicken"
+  },
+  {
+    "restaurant": "Green Earth Cafe",
+    "cuisine": "Vegan",
+    "type": "Plant-Based",
+    "location": "Eco Park Avenue",
+    "ambience": "Peaceful and nature-inspired",
+    "menu": [
+      { "item": "Vegan Buddha Bowl", "price": 350 },
+      { "item": "Avocado Toast", "price": 250 },
+      { "item": "Quinoa Salad", "price": 280 },
+      { "item": "Vegan Brownie", "price": 180 },
+      { "item": "Almond Milk Latte", "price": 200 }
+    ],
+    "specialties": "Known for delicious Vegan Buddha Bowl"
+  },
+  {
+    "restaurant": "Casa Mexicana",
+    "cuisine": "Mexican",
+    "type": "Veg & Non-Veg",
+    "location": "Downtown Plaza",
+    "ambience": "Colorful and festive",
+    "menu": [
+      { "item": "Tacos al Pastor", "price": 320 },
+      { "item": "Guacamole with Nachos", "price": 250 },
+      { "item": "Chicken Quesadilla", "price": 400 },
+      { "item": "Churros with Chocolate", "price": 280 },
+      { "item": "Horchata", "price": 150 }
+    ],
+    "specialties": "Known for delicious Tacos al Pastor"
+  },
+  {
+    "restaurant": "Dragon Wok",
+    "cuisine": "Chinese",
+    "type": "Veg & Non-Veg",
+    "location": "City Square Mall",
+    "ambience": "Modern and stylish",
+    "menu": [
+      { "item": "Kung Pao Chicken", "price": 420 },
+      { "item": "Vegetable Spring Rolls", "price": 180 },
+      { "item": "Sweet and Sour Pork", "price": 380 },
+      { "item": "Fried Rice", "price": 250 },
+      { "item": "Mango Pudding", "price": 200 }
+    ],
+    "specialties": "Known for delicious Kung Pao Chicken"
+  },
+  {
+    "restaurant": "Mediterranean Feast",
+    "cuisine": "Mediterranean",
+    "type": "Veg & Non-Veg",
+    "location": "Seaside Boulevard",
+    "ambience": "Relaxing and breezy",
+    "menu": [
+      { "item": "Hummus with Pita", "price": 220 },
+      { "item": "Lamb Shawarma", "price": 480 },
+      { "item": "Grilled Halloumi", "price": 300 },
+      { "item": "Falafel Wrap", "price": 280 },
+      { "item": "Baklava", "price": 250 }
+    ],
+    "specialties": "Known for delicious Lamb Shawarma"
+  }
+]

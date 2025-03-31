@@ -1,0 +1,8 @@
+user_input,retrieved_contexts,response,reference,context_precision,context_recall,faithfulness,answer_relevancy
+What are some Indian vegetarian dishes available?,"['Restaurant: Pure Veg Delights\nCuisine: Indian\nType: Vegetarian\nMenu: Chole Bhature (₹280), Aloo Paratha (₹180), Paneer Tikka (₹350), Masala Dosa (₹250), Gulab Jamun (₹100) Restaurant: Pure Veg Delights\nCuisine: Indian\nType: Vegetarian\nMenu: Chole Bhature (₹280), Aloo Paratha (₹180), Paneer Tikka (₹350), Masala Dosa (₹250), Gulab Jamun (₹100)']","Based on the provided context, some Indian vegetarian dishes available are:
+
+1. Chole Bhature
+2. Aloo Paratha
+3. Paneer Tikka
+4. Masala Dosa","Chole Bhature,Aloo Paratha,Paneer Tikka,Masala Dosa.",0.9999999999,1.0,1.0,0.9966039502836014
+are there any vegan restaurants in the area?,"['Restaurant: Green Earth Café\nCuisine: vegan\nType: Only Veg\nMenu: Vegan Buddha Bowl (₹320), Quinoa Salad (₹280), Avocado Toast (₹200), Vegan Smoothie (₹180), Chia Pudding (₹150) Restaurant: Green Earth Café\nCuisine: vegan\nType: Only Veg\nMenu: Vegan Buddha Bowl (₹320), Quinoa Salad (₹280), Avocado Toast (₹200), Vegan Smoothie (₹180), Chia Pudding (₹150)']","Yes, there is a vegan restaurant in the area called Green Earth Café.",Green Earth Café,0.9999999999,1.0,1.0,0.9933571318637865

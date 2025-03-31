@@ -1,0 +1,10 @@
+[
+    {
+        "user_input": "What are some Indian vegetarian dishes available?",
+        "ground_truth": "Chole Bhature,Aloo Paratha,Paneer Tikka,Masala Dosa."
+    },
+    {
+        "user_input": "are there any vegan restaurants in the area?",
+        "ground_truth": "Green Earth Café"
+    }
+]
