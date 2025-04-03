@@ -7,7 +7,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain_groq import ChatGroq
 
-from rag_eval_ragas import evaluate_rag_pipeline
+from evaluation.rag_eval_ragas import evaluate_rag_pipeline
 
 # 🔹 Set Groq API Key
 os.environ["GROQ_API_KEY"] = "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"
@@ -18,7 +18,7 @@ os.environ["LANGSMITH_API_KEY"] = "lsv2_pt_9c7e0e0276674314aa5693bba4d9080f_16f8
 os.environ["LANGSMITH_PROJECT"] = "textSummarization-langchain"
 
 # 🔹 Load and Extract Text from PDF
-file_path = "example_data/14 may office drop.pdf"
+file_path = "../resources/14 may office drop.pdf"
 loader = PyPDFLoader(file_path)
 docs = loader.load()
 

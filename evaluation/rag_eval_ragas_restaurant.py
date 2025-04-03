@@ -1,17 +1,18 @@
 import json
 
 from langchain_groq import ChatGroq
-from langchain_community.embeddings import HuggingFaceEmbeddings
+#from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from ragas import evaluate, RunConfig
 from datasets import Dataset
 from ragas.llms import LangchainLLMWrapper
 from ragas.metrics import context_precision, context_recall, faithfulness, answer_relevancy
 
-from sample_RAG_restaurant import qa_chain, retriever
+from rag.rag_restaurantFinder import qa_chain, retriever
 
 
 # Load the dataset
-with open("example_data/restaurant_goldendataset.json", "r") as f:
+with open("../resources/restaurant_goldendataset.json", "r") as f:
     data = json.load(f)
 
 # Convert to RAGAS Dataset format
@@ -26,14 +27,13 @@ for sample in data:
     print(retrieved_docs)
     response = qa_chain.invoke({"query": query})["result"]
     test_responses.append(response)
-    #contexts.append([" ".join([doc[0].page_content for doc in docs]) if docs else "" for docs in retrieved_docs])
     contexts.append([" ".join(doc.page_content for doc in retrieved_docs)] if retrieved_docs else "")
 # Add generated responses to dataset
 dataset_list = dataset.to_list()
 
 # Add responses to each entry
 for i in range(len(dataset_list)):
-    dataset_list[i]["response"] = test_responses[i]  # Ensure `test_responses` has correct length
+    dataset_list[i]["response"] = test_responses[i]
     dataset_list[i]["retrieved_contexts"] = contexts[i]
 
 # Recreate the dataset with the new responses
@@ -51,17 +51,15 @@ config = RunConfig(
 results = evaluate(
     dataset_with_responses,
     metrics=[
-        context_precision,
         context_recall,
-        faithfulness,
-        answer_relevancy,
+        faithfulness
     ],
     llm=evaluator_llm,
     embeddings=embedding_model,
     run_config=config
 )
 df = results.to_pandas()
-df.to_csv('score.csv', index=False)
+df.to_csv('../resources/output_export/restaurant_score.csv', index=False)
 
 results.upload()
 

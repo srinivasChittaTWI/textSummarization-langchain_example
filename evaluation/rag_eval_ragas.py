@@ -31,12 +31,6 @@ def evaluate_rag_pipeline(llm, qa_chain, retriever, embedding_model, test_querie
     # Compute RAG Metrics
     result = evaluate(
         dataset=dataset,
-        metrics=[
-            context_precision,
-            context_recall,
-            faithfulness,
-            answer_relevancy,
-        ],
         llm=evaluator_llm,
         embeddings=embedding_model
     )

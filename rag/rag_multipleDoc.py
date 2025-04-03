@@ -9,14 +9,12 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 
-from rag_eval_ragas_refactor import evaluate_rag_pipeline_dict
-
 # 🔹 Set Groq API Key
 os.environ["GROQ_API_KEY"] = "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"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # 🔹 Load and Extract Text from PDF
-pdf_files = ["example_data/rag_explained.pdf", "example_data/LLM overview.pdf", "example_data/rise-of-llm.pdf"]
+pdf_files = ["resources/rag_explained.pdf", "resources/LLM overview.pdf", "resources/rise-of-llm.pdf"]
 docs = []
 for pdf in pdf_files:
     loader = PyPDFLoader(pdf)

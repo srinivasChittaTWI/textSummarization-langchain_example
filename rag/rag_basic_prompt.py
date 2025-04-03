@@ -11,10 +11,10 @@ import os
 
 
 os.environ["GROQ_API_KEY"] = "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"
-chat = ChatGroq(model_name="mixtral-8x7b-32768", temperature=0)
+chat = ChatGroq(model_name="mistral-saba-24b", temperature=0)
 
 parser = StrOutputParser()
-file_path = "example_data/14 may office drop.pdf"
+file_path = "../resources/14 may office drop.pdf"
 
 
 def document_loader(file_path):
@@ -64,5 +64,5 @@ prompt = ChatPromptTemplate.from_messages(
 question_answer_chain = create_stuff_documents_chain(chat, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
-results = rag_chain.invoke({"input": ""})
+results = rag_chain.invoke({"input": "what is the cost of the ride?"})
 print(results["answer"])

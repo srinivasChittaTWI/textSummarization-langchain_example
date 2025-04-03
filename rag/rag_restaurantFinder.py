@@ -3,7 +3,8 @@ import os
 
 import streamlit as st
 from langchain.chains import RetrievalQA
-from langchain_community.embeddings import HuggingFaceEmbeddings
+
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_groq import ChatGroq
 
@@ -17,7 +18,7 @@ os.environ["LANGSMITH_PROJECT"] = "textSummarization-langchain"
 os.environ["RAGAS_APP_TOKEN"] = "apt.4278-6bf0c1789f57-30c1-9949-75a9bee2-0397a"
 
 
-file_path = "example_data/restaurant_data.json"
+file_path = "/Users/srinivas.chitta/PycharmProjects/textSummarization-langchain/resources/restaurant_data.json"
 
 # 🔹 Load and store data from json
 with open(file_path, "r") as file:
@@ -38,7 +39,6 @@ for entry in restaurant_data:
 print(f"Loaded {len(docs)} restaurant entries!")
 
 
-# 🔹 Store in Vector Database (ChromaDB)
 embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en")
 # Store documents in ChromaDB
 vector_store = Chroma.from_texts(docs, embedding_model, persist_directory="./chroma_db")
@@ -69,6 +69,6 @@ if user_query:
         st.write("### ✅ Answer:")
         st.write(response["result"])  # Display the retrieved answer
 
+
 print(f"🔹 Answer: {response}")
 
-#Evaluate the RAG Pipeline

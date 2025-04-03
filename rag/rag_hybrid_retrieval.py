@@ -21,7 +21,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["SERPAPI_API_KEY"] = "26a1c3fd42e8a6165c513f59ee1fa5510d198473ce2a962a649a618d6d464601"
 
 # 🔹 Load and Extract Text from PDF
-pdf_files = ["example_data/rag_explained.pdf", "example_data/LLM overview.pdf", "example_data/rise-of-llm.pdf"]
+pdf_files = ["resources/rag_explained.pdf", "resources/LLM overview.pdf", "resources/rise-of-llm.pdf"]
 docs = []
 for pdf in pdf_files:
     loader = PyPDFLoader(pdf)
